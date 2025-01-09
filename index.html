@@ -9,23 +9,32 @@
     <title>Calcula - freela</title>
 </head>
 <body>
-    <section class="header">
-        <h3>Bem-vindo ao</h3>
-        <h1>Calcula<br>Freela</h1>
-        <h3>Seu site favorito para calcular os jobs freela</h3>
-    </section>
-    
-    <main>
-        <div class="gastos">
-            <span>Gastos Pessoais</span>
-            <div>
-                <input type="text">
-                <input type="number" name="" id="">
+
+    <main class="container">
+
+        <div class="content">
+            <span>gasto pessoais</span>
+
+            <ul class="spending-list">
+                <li class="item">
+                    <input type="text">
+                    <input type="number" name="" id="spending-amount">
+                    <input type="button" value="X">
+                </li>
+            </ul>
+
+            <button class="button-add" id="btn-add">Add +</button>
+
+            <div class="total-value" id="personal-expenses">
+                <p>Valor total:</p>
+                <span>R$ <span id="result"></span></span>
             </div>
-            <button>Add +</button>
+
         </div>
 
     </main>
+
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
