@@ -1,40 +1,75 @@
-const BTN_ADD = document.querySelector('#btn-add');
+const addItemButton = document.querySelector('#btn-add');
+const itemList = document.querySelector('#itemList');
+const totalResult = document.querySelector('#result');
 
-BTN_ADD.addEventListener("click", add_li)
+function addItem(){
+    const newItem = document.createElement('li');
+    newItem.setAttribute("class", "item");
+    newItem.innerHTML = `
+        <input type="text" class="name-item">
+        <span class="separator"></span>
+        <input type="number" name="" class="value-item" id="itemValue">
+        <input type="button" value="X" id="remove">
+    `;
 
-function add_li(){
-    const UL_PERSONAL_EXPENSE = document.querySelector('ul');
+    itemList.appendChild(newItem);
 
-    const li = document.createElement('li');
-    li.innerHTML += `<li class="item">
-                        <input type="text">
-                        <input type="number" name="" id="spending-amount">
-                        <input type="button" value="X">
-                    </li>`;
+    const input = newItem.querySelector('#itemValue');
+    const removeButton = newItem.querySelector('#remove')
 
-    UL_PERSONAL_EXPENSE.appendChild(li);
-
+    input.addEventListener('input', updateSum);
+    removeButton.addEventListener('click', ()=> removeItem(newItem, input));
 }
 
-let valor_gasto = document.querySelectorAll('#spending-amount');
-const RESULT = document.querySelector('#result');
+function updateSum(){
+    const S1 = document.querySelector('#s1');
 
-    function Soma() {
-        let soma = 0;
+    totalSum = 0;
 
-        // Iterar sobre os inputs para somar os valores
-        valor_gasto.forEach(input => {
-            const valorItem = parseFloat(input.value);
+    document.querySelectorAll('#itemValue').forEach(input => {
+        const value = Number(input.value);
+        if(!isNaN(value)){
+            totalSum += value + S1;
+        }
+    });
+    totalResult.textContent = totalSum.toFixed(2);
+}
 
-            if (!isNaN(valorItem)) {
-                soma += valorItem;
-            }
-        });
 
-        // Atualizar o campo de soma com o resultado
-        RESULT.textContent += soma.toFixed(2);
-    }
+function removeItem(item, input){
+    const value = parseFloat(input.value);
+    if(!isNaN(value)) totalSum -= value;
 
-valor_gasto.forEach(input => {
-    input.addEventListener('blur', Soma);
-});
+    item.remove();
+
+    totalResult.textContent = totalSum.toFixed(2);
+}
+
+
+addItemButton.addEventListener('click', addItem);
+
+
+
+// let valor_gasto = document.querySelectorAll('#spending-amount');
+// const RESULT = document.querySelector('#result');
+
+//     function Soma() {
+//         let soma = 0;
+
+//         //Iterar sobre os inputs para somar os valores
+//         valor_gasto.forEach(input => {
+//             const valorItem = parseFloat(input.value);
+
+//             if (!isNaN(valorItem)) {
+//                 soma += valorItem;
+//             }
+//         });
+
+//         // Atualizar o campo de soma com o resultado
+//         RESULT.textContent += soma.toFixed(2);
+//     }
+
+// valor_gasto.forEach(input => {
+//     input.addEventListener('blur', Soma);
+// });
+
