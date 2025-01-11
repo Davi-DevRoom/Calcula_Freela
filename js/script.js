@@ -35,7 +35,6 @@ function updateSum(){
     totalResult.textContent = totalSum.toFixed(2);
 }
 
-
 function removeItem(item, input){
     const value = parseFloat(input.value);
     if(!isNaN(value)) totalSum -= value;
@@ -45,31 +44,4 @@ function removeItem(item, input){
     totalResult.textContent = totalSum.toFixed(2);
 }
 
-
 addItemButton.addEventListener('click', addItem);
-
-
-
-// let valor_gasto = document.querySelectorAll('#spending-amount');
-// const RESULT = document.querySelector('#result');
-
-//     function Soma() {
-//         let soma = 0;
-
-//         //Iterar sobre os inputs para somar os valores
-//         valor_gasto.forEach(input => {
-//             const valorItem = parseFloat(input.value);
-
-//             if (!isNaN(valorItem)) {
-//                 soma += valorItem;
-//             }
-//         });
-
-//         // Atualizar o campo de soma com o resultado
-//         RESULT.textContent += soma.toFixed(2);
-//     }
-
-// valor_gasto.forEach(input => {
-//     input.addEventListener('blur', Soma);
-// });
-
