@@ -24,17 +24,56 @@ body{
     width: 100dvw;
     height: 100dvh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     background-image: var(--gradient-bg);
 
     font-family: var(--font);
 }
 
+/* Header */
+.header{
+    width: 320px;
+    position: absolute;
+    left: 1rem;
+    top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header-title{
+    width: 320px;
+    padding-left: 16px;
+}
+
+.header-title h3{
+    font-size: 32px;
+    font-weight: 400;
+
+}
+
+.header-title h1{
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.header-title p{
+    width: 204px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+
+
 .container{
     display: flex;
     justify-content: start;
     align-items: center;
+    margin-right: 32px;
     gap: 32px;
 }
 
@@ -163,4 +202,85 @@ input{
 .total-value span{
     color: #001DB2;
     font-size: 24px;
+}
+
+
+.variables{
+    width: 100vw;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.var-box{
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}
+
+#profit-select label{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#profit-select label::after{
+    content: '';
+    display: block;
+    position: relative;
+    top: 10px;
+    width: 98px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--clr-main);
+}
+
+#select-button{
+    margin-top: .5rem;
+    display: flex;
+    padding: 0.75rem;
+    justify-content: space-between;
+
+    border-radius: .375rem;
+    border: 1px solid var(--clr-main);
+    background-color: var(--clr-input)
+}
+
+#selected-value{
+    color: #AFABB6;
+    font-size: 0.875rem;
+    letter-spacing: 0.02625rem;
+}
+
+#options-view-button:focus + #select-button,
+#options-view-button:checked + #selected-button{
+    outline: 1px solid #A881e6;
+}
+
+#profit-select{
+    position: relative;
+}
+
+#options-view-button{
+    all: unset;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+
+#options{
+    margin-top: .25rem;
+    border-radius: .375rem;
+    border: 1px solid var(--clr-main);
+    background: #8686ce;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+    width: 100%;
+    border-bottom: 1px solid var(--clr-gap);
 }
