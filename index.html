@@ -11,178 +11,140 @@
     <title>Calcula - freela</title>
 </head>
 <body>
-
-    <section class="header">
+    <!-- HEADER -->
+    <header class="container-header" id="header">
         <div class="header-title">
-            <h3>Bem-vindo ao</h3>
+            <h3>Bem-vindo(a) ao</h3>
             <h1>CALCULA FREELA</h1>
-            <p>Seu site favorito para calcular os jobs freela</p>
+            <p>Seu site favorito para calcular os jobs freela.</p>
         </div>
-        
-    </section>
 
+        <div class="content-box">
+             <span class="title">
+                Quanto cobrar por hora
+             </span>
+             <ul class="total-temp">
+                <li class="item-temp">
+                    <input type="text" class="name-item" placeholder="Hora">
+                    <span class="separator"></span>
+                    <span id="totalTemp"></span>
+                </li>
+             </ul>
+        </div>
+
+        <button id="Calc">Calcular freela</button>
+    </header>
+    <!-- FIM HEADER -->
+
+    <!-- MAIN -->
     <main class="container">
+        <div class="container-content">
 
-        <div class="content">
-            <span class="title">Gasto Pessoais</span>
-            <ul class="spending-list" id="itemList1"></ul>
-            <button class="button-add" id="btn-add1">Add <span>+</span></button>
-            <div class="total-value" id="personal-expenses1">
-                <p>Valor total:</p>
-                <span>R$ <span id="result1"></span></span>
+            <div class="content-box">
+
+                <span class="title">Gasto Pessoais</span>
+                <ul class="spending-list" id="itemList-1"></ul>
+
+                <button class="button-add" id="btn-add-1">Add <span>+</span></button>
+
+                <div class="total-value" id="personal-expenses1">
+                    <p>Valor total:</p>
+                    <span>R$ <span id="result-1"></span></span>
+                </div>
+
             </div>
-        </div>
-    
-        <div class="content">
-            <span class="title">Gasto Profissionais</span>
-            <ul class="spending-list" id="itemList2"></ul>
-            <button class="button-add" id="btn-add2">Add <span>+</span></button>
-            <div class="total-value" id="personal-expenses2">
-                <p>Valor total:</p>
-                <span>R$ <span id="result2"></span></span>
+
+            <div class="content-box">
+
+                <span class="title">Gasto Profissionais</span>
+                <ul class="spending-list" id="itemList-2"></ul>
+
+                <button class="button-add" id="btn-add-2">Add <span>+</span></button>
+
+                <div class="total-value" id="personal-expenses1">
+                    <p>Valor total:</p>
+                    <span>R$ <span id="result-2"></span></span>
+                </div>
+
             </div>
+
+            <div class="content-box">
+
+                <span class="title">Gasto Educacionais</span>
+                <ul class="spending-list" id="itemList-3"></ul>
+
+                <button class="button-add" id="btn-add-3">Add <span>+</span></button>
+
+                <div class="total-value" id="personal-expenses1">
+                    <p>Valor total:</p>
+                    <span>R$ <span id="result-3"></span></span>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="content">
-            <span class="title">Gasto Educacionais</span>
-            <ul class="spending-list" id="itemList3"></ul>
-            <button class="button-add" id="btn-add3">Add <span>+</span></button>
-            <div class="total-value" id="personal-expenses3">
-                <p>Valor total:</p>
-                <span>R$ <span id="result3"></span></span>
-            </div>
-        </div>
-    </main>
+        <section class="variables" id="variables">
 
-    <section class="variables">
-        <div class="var-box">
+            <div class="var-box">
+
+                <div class="select">
+
+                    <div class="select" id="select">
+
+                        <label for="profit-button">Lucro pretendido:</label>
+
+                        <div class="button" id="button">
+                            <input type="number" id="profit-button">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="var-box">
+
+                <div class="select">
+                    <div class="select" id="select">
+                        
+                        <label for="hours-button">Horas diárias:</label>
+
+                        <div class="button" id="button">
+                            <input type="number" id="hours-button">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="var-box">
+
+                <div class="select">
+                    <div class="select" id="select">
+                        
+                        <label for="days-button">Quantidade de dias:</label>
+
+                        <div class="button" id="button">
+                            <input type="number" id="days-button">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
             
-            <div class="select">
-                <div id="profit-select">
-                    <label for="options-view-button">Lucro pretendido:</label>
-                    <input type="checkbox" id="options-view-button">
 
-                    <div id="select-button">
-                        <div id="selected-value">Selecione a porcentagem</div>
-                        <div id="chevrons">
-                            <i class="uis uis-angle-down" data-icon="down"></i>
-                            <i class="uis uis-angle-up" data-icon="up"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-                <ul id="options">
-                    <li class="option">
-                        <input type="radio" name="" id=""
-                        data-label="10% de Lucro">
-                        <span>10% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="15% de Lucro">
-                        <span>15% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="20% de Lucro">
-                        <span>20% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="25% de Lucro">
-                        <span>25% de lucro</span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="var-box">
-            <div class="select">
-                <div id="profit-select">
-                    <label for="options-view-button">Horas diárias:</label>
-                    <input type="checkbox" id="options-view-button">
-
-                    <div id="select-button">
-                        <div id="selected-value">Selecione a porcentagem</div>
-                        <div id="chevrons">
-                            <i class="uis uis-angle-down" data-icon="down"></i>
-                            <i class="uis uis-angle-up" data-icon="up"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-                <ul id="options">
-                    <li class="option">
-                        <input type="radio" name="" id=""
-                        data-label="10% de Lucro">
-                        <span>10% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="15% de Lucro">
-                        <span>15% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="20% de Lucro">
-                        <span>20% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="25% de Lucro">
-                        <span>25% de lucro</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="var-box">
-            <div class="select">
-                <div id="profit-select">
-                    <label for="options-view-button">Quantidade de dia(as):</label>
-                    <input type="checkbox" id="options-view-button">
-
-                    <div id="select-button">
-                        <div id="selected-value">Selecione a porcentagem</div>
-                        <div id="chevrons">
-                            <i class="uis uis-angle-down" data-icon="down"></i>
-                            <i class="uis uis-angle-up" data-icon="up"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-                <ul id="options">
-                    <li class="option">
-                        <input type="radio" name="" id=""
-                        data-label="10% de Lucro">
-                        <span>10% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="15% de Lucro">
-                        <span>15% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="20% de Lucro">
-                        <span>20% de lucro</span>
-                    </li>
-
-                    <li class="option">
-                        <input type="radio" name="" id="" data-label="25% de Lucro">
-                        <span>25% de lucro</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
-
-    <script src="js/script.js"></script>
+        </section>
+    
+    </main>
+    <!-- FIM MAIN -->
+    <script type="module" src="js/script.js"></script>
 
 </body>
 </html>

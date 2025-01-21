@@ -33,7 +33,7 @@ body{
 }
 
 /* Header */
-.header{
+.container-header{
     width: 320px;
     position: absolute;
     left: 1rem;
@@ -52,7 +52,6 @@ body{
 .header-title h3{
     font-size: 32px;
     font-weight: 400;
-
 }
 
 .header-title h1{
@@ -66,18 +65,60 @@ body{
     font-weight: 400;
 }
 
-
-
-
-.container{
+.total-temp{
+    
     display: flex;
-    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    list-style: none;
+    gap: 14px;
+    padding-bottom: 2rem;
+}
+
+.item-temp{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-white);
+    border-radius: 10px;
+}
+
+#totalTemp{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Calc{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#Calc:hover{
+    background-color: #001DB2;
+    box-shadow: var(--box-shadow);
+}
+
+.container-content{
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-right: 32px;
     gap: 32px;
 }
 
-.content{
+.content-box{
     width: 320px;
     height: 100%;
     background-color: var(--clr-box);
@@ -204,27 +245,19 @@ input{
     font-size: 24px;
 }
 
-
 .variables{
-    width: 100vw;
+    display: flex;
+    gap: 2rem;
     margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.var-box{
-    display: flex;
-    flex-direction: column;
-    gap: 41px;
-}
 
-#profit-select label{
+.select label{
     font-weight: 500;
     font-size: 24px;
 }
 
-#profit-select label::after{
+.select label::after{
     content: '';
     display: block;
     position: relative;
@@ -235,98 +268,13 @@ input{
     background-color: var(--clr-main);
 }
 
-#select-button{
-    margin-top: .5rem;
-    display: flex;
-    padding: 0.75rem;
-    align-items: center;
-    justify-content: space-between;
-
-    border-radius: .375rem;
-    border: 1px solid #001DB2;
-    background-color: var(--clr-gap);
-}
-
-#selected-value{
-    color: var(--clr-white);
-}
-
-#chevrons{
-    color: var(--clr-white);
-    font-size: 1.5rem;
-}
-
-#chevrons [data-icon="up"]{
-    display: none;
-}
-
-#options-view-button:focus + #select-button,
-#options-view-button:checked + #select-button{
-    outline: 2px solid var(--clr-rest);
-}
-
-#profit-select:has(#options-view-button:checked) label, #options-view-button:checked + #select-button #chevrons{
-    color: var(--clr-rest);
-}
-
-#options-view-button:checked + #select-button #chevrons [data-icon="down"]{
-    display: none;
-}
-
-#options-view-button:checked + #select-button #chevrons [data-icon="up"]{
-    display: block;
-}
-
-#profit-select{
-    position: relative;
-}
-
-#options-view-button{
-    all: unset;
-    position: absolute;
-    inset: 0;
-    cursor: pointer;
-    z-index: 3;
-}
-
-#options{
-    margin-top: .25rem;
-    border-radius: .375rem;
-    border: 1px solid var(--clr-rest);
-    background-color: var(--clr-gap);
-    display: none;
-}
-
-.option{
+.button input{
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
-    padding: .75rem;
-    border-bottom: 1px solid var(--clr-main);
-    position: relative;
-}
-
-.option span{
-    color: var(--clr-box);
-}
-
-.option:has(input:checked),
-.option:hover{
-    background-color: #0033FF;
-}
-
-.option:has(input:focus){
-    outline: 1px solid var(--clr-box);
-}
-
-.option input[type="radio"]{
-    all: unset;
-    position: absolute;
-    inset: 0;
-    cursor: pointer;
-}
-
-#profit-select:has(#options-view-button:checked)+ #options{
-    display: block;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: .375rem;
+    background-color: var(--clr-gap);
 }
