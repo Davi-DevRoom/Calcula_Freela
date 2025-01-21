@@ -100,3 +100,40 @@ document.querySelector('#btn-add2').addEventListener('click', () => {
 document.querySelector('#btn-add3').addEventListener('click', () => {
     addItem(document.querySelector('#itemList3'), document.querySelector('#result3'));
 });
+
+
+let select = document.querySelector('.select'),
+selectedValue = document.getElementById('selected-value'),
+optionsViewButton = document.getElementById('options-view-button'),
+inputsOptions = document.querySelectorAll('.option input');
+
+inputsOptions.forEach(input => {
+    input.addEventListener('click', event =>{
+        selectedValue.textContent = input.dataset.label
+
+        const isMoudeOrTouch =
+        event.pointerType == "mouse" || event.pointerType == "touch"
+
+        isMoudeOrTouch && optionsViewButton.click();
+    })
+});
+
+window.addEventListener('keydow', e => {
+    if(!select.classList.contains('open'))return
+
+    if(e.key == "Escape" || e.key == " "){
+        optionsViewButton.click()
+    }
+})
+
+optionsViewButton.addEventListener('input', () => {
+    select.classList.toggle('open')
+
+    if(!select.classList.contains('open')) return
+
+    const input = 
+    document.querySelector('.option input:checked') || 
+    document.querySelector('.option input')
+
+    input.focus()
+})
