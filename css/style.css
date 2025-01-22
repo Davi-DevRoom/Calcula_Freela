@@ -14,7 +14,7 @@
 
     --font: "Inter", serif;
 }
-
+/* INITIAL SETUP */
 *{
     padding: 0; margin: 0;
     box-sizing: border-box;
@@ -32,13 +32,12 @@ body{
     font-family: var(--font);
 }
 
-/* Header */
+/* HEADER CONTAINER */
 .container-header{
     width: 320px;
     position: absolute;
     left: 1rem;
     top: 50px;
-
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -66,7 +65,6 @@ body{
 }
 
 .total-temp{
-    
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -110,6 +108,7 @@ body{
     box-shadow: var(--box-shadow);
 }
 
+/* CONTAINER MAIN */
 .container-content{
     display: flex;
     justify-content: center;
@@ -163,7 +162,7 @@ body{
     border-radius: 10px;
 }
 
-/* INPUTS */
+/* INPUTS CONTENT BOX */
 .name-item{
     width: 124px;
     padding: 19px 10px;
@@ -191,7 +190,6 @@ input{
     height: 50px;
     border: none;
     outline: 0;
-
 }
 
 #remove{
@@ -205,7 +203,7 @@ input{
     cursor: pointer;
 }
 
-/* BUTTON ADD + */
+/* BUTTON ADD +  CONTENT BOX*/
 .button-add{
     width: 122px;
     height: 50px;
@@ -230,7 +228,7 @@ input{
     box-shadow: var(--box-shadow);
 }
 
-/* VALUE TOTAL */
+/* VALUE TOTAL CONTENT BOX */
 .total-value{
     display: flex;
     justify-content: start;
@@ -245,12 +243,12 @@ input{
     font-size: 24px;
 }
 
+/* VARIABLE VAR-BOX*/
 .variables{
     display: flex;
     gap: 2rem;
     margin-top: 2rem;
 }
-
 
 .select label{
     font-weight: 500;
